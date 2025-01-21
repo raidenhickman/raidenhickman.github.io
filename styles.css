@@ -1,0 +1,57 @@
+#containerdiv {
+  display: flex;
+}
+
+#innerdiv {
+  display: flex;
+  border: 25px outset transparent;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+#button {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 100%;
+  border-radius: 5px;
+  border: 2px solid black;
+  background: white;
+  margin: 10px;
+  font-family: Arial !important;
+  font-weight: bold;
+}
+
+#profilepic {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin-top: 15px;
+}
+
+h1 {
+  font-family: Arial !important;
+}
+
+.grey-text {
+  color: grey;
+  opacity: 0.25;
+}
+
+body {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      transform: TranslateY(50px);
+      opacity: 0;
+  }
+
+  100% {
+      transform: TranslateY(0px);
+      opacity: 1;
+  }
+}
