@@ -1,8 +1,10 @@
+/* containerdiv is a generic all purpose div for containing things. margin-bottom is set like that so that the site maintains a consistent compact style */
 #containerdiv {
   display: flex;
   margin-bottom: 0;
 }
 
+/* generic div for elements to go next to each other inside of a containerdiv with a margin between them and consistent alignment */
 #innerdiv {
   display: flex;
   align-items: center;
@@ -10,11 +12,12 @@
   margin-left: 5%
 }
 
+/* generic button style to ensure consistent buttons */
 #button {
   display: flex;
   width: 10%;
   height: 50px;
-  font-size: 100%;
+  font-size: 100%; 
   border-radius: 5px;
   border: 0px;
   background: lightgray;
@@ -22,12 +25,14 @@
   margin-bottom: 0;
 }
 
+/* for the top of the website, to contain the three navigational buttons. */
 #buttoncontainer {
   display: flex;
   width: 100%;
   height: 50px;
 }
 
+/* turns the input image into a circle of particular size */
 #profilepic {
   display: flex;
   align-items: center;
@@ -38,32 +43,29 @@
   margin-top: 2%;
 }
 
-h1 {
+/* sets the font of important site elements to Calibri */
+h1, form, h2 {
   font-family: Calibri !important;
 }
 
+/* larger font size here to make it more consistent with how I used the other fonts - best practice would be altering it manually each time to maintain expected behaviour, but this won't have an impact on the site due  to the relatively small scope */
 p {
   font-size: 150%;
   font-family: Calibri !important;
 }
 
-form {
-  font-family: Calibri !important;
-}
-
-h2 {
-  font-family: Calibri !important;
-}
-
+/* makes the hr element have no gap above it, as I wanted the buttons to touch it. by default it has a gap. best practice in this scenario would be altering it manually each time I need to do that but this is the only scenario in which I use hr on this site */
 hr {
   margin-top: 0;
 }
 
+/* grey, low opacity text for use in the email to create the effect that shows both name and email address */
 .grey-text {
   color: grey;
   opacity: 0.25;
 }
 
+/* vl means 'vertical line' - used to draw a vertical line between elements */
 .vl {
   border-left: 1px solid black;
   margin-left: 20%;
@@ -71,12 +73,14 @@ hr {
   display: block
 }
 
+/* fade in animation for when the site is loaded */
 body {
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
+/* keyframes of the fade in animatiom - all elements start 50 pixels below intended position and invisible, then become visible and move up linearly. */
 @keyframes fadeInAnimation {
   0% {
       transform: TranslateY(50px);
