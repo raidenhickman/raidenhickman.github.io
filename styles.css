@@ -57,8 +57,21 @@
 }
 
 /* sets the font of important site elements to Calibri */
-h1, form, h2, p {
+* {
   font-family: Calibri !important;
+}
+
+table {
+  table-layout: fixed;
+  border: 1px solid lightgrey;
+  width: 50%;
+  margin-top: 5%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
 }
 
 /* makes the hr element have no gap above it, as I wanted the buttons to touch it. by default it has a gap. best practice in this scenario would be altering it manually each time I need to do that but this is the only scenario in which I use hr on this site */
