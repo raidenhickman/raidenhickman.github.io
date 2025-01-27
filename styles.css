@@ -1,3 +1,18 @@
+/* sets the font of important site elements to Calibri */
+* {
+  font-family: Calibri !important;
+}
+
+ul {
+  padding: 2%;
+}
+li {
+  border: thin black solid;
+  border-radius: 5px;
+  padding: 2%;
+  margin-top: 2%;
+}
+
 /* containerdiv is a generic all purpose div for containing things. margin-bottom is set like that so that the site maintains a consistent compact style */
 .containerdiv {
   display: flex;
@@ -7,12 +22,12 @@
 /* generic div for elements to go next to each other inside of a containerdiv with a margin between them and consistent alignment */
 .innerdiv {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   margin-left: 5%
 }
 
-/* generic button style to ensure consistent stylised buttons */
+/* generic button style - margins are so small for aesthetics */
 .button {
   display: flex;
   width: 100%;
@@ -56,22 +71,38 @@
   object-position: 50% 50%;
 }
 
-/* sets the font of important site elements to Calibri */
-* {
-  font-family: Calibri !important;
-}
 
+/* formatting for the calendar */
 table {
   table-layout: fixed;
-  border: 1px solid lightgrey;
-  width: 50%;
-  margin-top: 5%;
-  border-collapse: collapse;
+  border: transparent;
+  width: 100%;
+  margin-top: 0%;
+  border-collapse: separate;
+  border-spacing: 10px 0;
 }
-
-th, td {
-  border: 1px solid lightgrey;
-  border-collapse: collapse;
+th {
+  border-bottom: thin solid black;
+  vertical-align: top;
+  margin-bottom: 1%;
+  position: relative;
+}
+td {
+  vertical-align: top;
+  background-color: lightgreen;
+  border-radius: 3%;
+  border-bottom: transparent;
+}
+.time {
+  border-bottom: thin solid lightgrey;
+  vertical-align: top;
+  background-color: transparent;
+}
+/* greyed out sections of the calendar symbolising unavailability */
+.calendarunavailable {
+  background-color:lightcoral;
+  border-radius: 3%;
+  border-bottom: transparent;
 }
 
 /* makes the hr element have no gap above it, as I wanted the buttons to touch it. by default it has a gap. best practice in this scenario would be altering it manually each time I need to do that but this is the only scenario in which I use hr on this site */
@@ -87,7 +118,7 @@ hr {
 
 /* vl means 'vertical line' - used to draw a vertical line between elements */
 .vl {
-  border-left: 1px solid black;
+  border-left: thin solid black;
   margin-left: 15%;
   height: flex;
   display: block
