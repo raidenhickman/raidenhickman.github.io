@@ -2,6 +2,10 @@
 * {
   font-family: Calibri !important;
 }
+h2, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 ul {
   padding: 2%;
@@ -24,19 +28,27 @@ li {
   display: flex;
   align-items: left;
   justify-content: left;
-  margin-left: 5%
+  margin-left: 5vw;
 }
 
-/* generic button style - margins are so small for aesthetics */
+.scrollablediv {
+  outline:black thin solid; 
+  height: flex; 
+  width: flex; 
+  margin-right: 0; 
+  border-radius: 5px;
+}
+
+/* generic button style - margins are so small for aesthetics. the buttons are the only element  that uses VH - this is to ensure that they're a reasonable clickable size on mobile devices. */
 .button {
   display: flex;
-  width: 100%;
-  height: 50px;
+  width: 16.66vw;
+  height: 8vh;
   font-size: 100%; 
   border-radius: 5px;
   border: 0px;
   background: lightgray;
-  margin-left: 0.1%;
+  margin-left: 0.1vw;
   margin-bottom: 0;
 }
 /* for the top of the website, to contain the three navigational buttons. */
@@ -54,8 +66,8 @@ li {
   height: 50%;
   width: 50%;
   border-radius: 50%;
-  margin-top: 1%;
-  margin-left: 2%;
+  margin-top: 2%;
+  margin-left: 1vw;
   position: relative;
 }
 .profilepic::after {
@@ -76,7 +88,7 @@ li {
 table {
   table-layout: fixed;
   border: transparent;
-  width: 100%;
+  width: 50vw;
   margin-top: 0%;
   border-collapse: separate;
   border-spacing: 10px 0;
@@ -119,7 +131,7 @@ hr {
 /* vl means 'vertical line' - used to draw a vertical line between elements */
 .vl {
   border-left: thin solid black;
-  margin-left: 15%;
+  margin-left: 15vw;
   height: flex;
   display: block
 }
@@ -130,7 +142,6 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-
 /* keyframes of the fade in animatiom - all elements start 50 pixels below intended position and invisible, then become visible and move up linearly. */
 @keyframes fadeInAnimation {
   0% {
