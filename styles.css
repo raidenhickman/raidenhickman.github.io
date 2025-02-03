@@ -1,20 +1,24 @@
 /* sets the font of important site elements to Calibri */
 * {
-  font-family: Calibri !important;
+  font-family: Andale Mono, monospace !important;
 }
 h2, p {
   margin-top: 0;
   margin-bottom: 0;
 }
+h2 {
+  text-decoration: underline;
+}
 
 ul {
-  padding: 2%;
+  padding: 1%;
 }
 li {
   border: thin black solid;
   border-radius: 5px;
-  padding: 2%;
-  margin-top: 2%;
+  padding: 1%;
+  margin: 1%;
+  max-width: 45vw;
 }
 
 /* containerdiv is a generic all purpose div for containing things. margin-bottom is set like that so that the site maintains a consistent compact style */
@@ -101,7 +105,7 @@ th {
 }
 td {
   vertical-align: top;
-  background-color: lightgreen;
+  background-color: #b2f294;
   border-radius: 3%;
   border-bottom: transparent;
 }
@@ -112,7 +116,7 @@ td {
 }
 /* greyed out sections of the calendar symbolising unavailability */
 .calendarunavailable {
-  background-color:lightcoral;
+  background-color: #d9958f;
   border-radius: 3%;
   border-bottom: transparent;
 }
