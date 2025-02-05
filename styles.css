@@ -63,13 +63,14 @@ li {
 }
 .buttonMOBILE {
   display: flex;
-  width:33vw;
+  width: 33vw;
   height: 8vh;
   font-size: 300%; 
   border-radius: 5px;
   border: 0px;
   background: lightgray;
   margin-bottom: 0;
+  justify-content: center;
 }
 .buttoncontainerMOBILE {
   display: flex;
