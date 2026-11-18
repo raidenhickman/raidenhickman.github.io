@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Route, NavLink, Routes, HashRouter } from "react-router-dom";
+import { Component } from "react";
+import { HashRouter } from "react-router-dom";
 
 import "./App.css";
 
@@ -7,13 +7,13 @@ const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 const hours = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"]
 
 const unavailable = {
-	"Mon": [
-		hours.slice(1,3),
-		hours.slice(8)
-	],
-	"Tue": hours.slice(4),
-	"Wed": hours.slice(4),
-	"Thu": hours.slice(1,5)
+	// "Mon": [
+	//	hours.slice(1,3),
+	//	hours.slice(8)
+	//],
+	//"Tue": hours.slice(4),
+	//"Wed": hours.slice(4),
+	//"Thu": hours.slice(1,5)
 }
 
 function isAvailable(day, time) {
@@ -66,7 +66,7 @@ class App extends Component {
 							<p>Raiden Hickman</p>
 						</div>
 						<div className="headerdiv3">
-							<p><a href="mailto:Rafdl.com">Raiden.Hickman@gmail.com</a></p>
+							<p><a href="mailto:Raiden.Hickman@gmail.com">Raiden.Hickman@gmail.com</a></p>
 						</div>
 						<div className="headerdiv4">
 							<p><a href="tel:+61478287743">+61 478 287 743</a></p>
@@ -89,6 +89,7 @@ class App extends Component {
 
 
 					<div className="calendar">
+						<p>At this time, I have no major consistent commitments until March 2027 due to University holidays.</p>
 						<div className="legend">
 							<div className="box available"></div>: Available <div className="box unavailable"></div>: Unavailable
 						</div>
@@ -116,6 +117,8 @@ class App extends Component {
 						    </tbody>
 					    </table>
 					</div>
+
+
 					<div className="qualifications">
 						<div className="buttons">
 							<button className="button" onClick={() => window.location.href='https://github.com/raidenhickman/'}><span>GitHub</span></button>

@@ -58,15 +58,18 @@ a:hover {
 
 main{
   grid-area: main;
+  flex: 1;
 }
 
 footer {
-  grid-area: footer;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: var(--secondary-color);
   padding: 1em;
-  padding-top: 50px;
-  position: relative;
+  padding-top: 2em;
   z-index: 1;
+  margin-top: 0;
 }
 
 h4 {
@@ -140,7 +143,8 @@ ul {
 
 .App {
   min-height: 100vh;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
@@ -168,126 +172,6 @@ ul {
   pointer-events: none;
 }
 
-@media (min-width: 1200.01px) {
-  body { overflow: hidden; }
-  body.lightmode { overflow: hidden; }
-
-  .headerparent {
-    display: flex;
-    align-items: center;
-    width: 100%
-  }
-
-  .headerdiv1 {
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    margin-left: 5%;
-  }
-  .headerdiv2,
-  .headerdiv3,
-  .headerdiv4 {
-    margin-left: 3rem;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .bodyparent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    gap: 2rem;
-    margin: 3rem;
-    margin-left: 5%;
-  }
-
-  .aboutme { grid-area: 1 / 1 / 5 / 2; font-size: 125%; }
-  .calendar { grid-area: 5 / 1 / 11 / 2; }
-  .qualifications { grid-area: 1 / 2 / 11 / 4; max-height: 65vh; }
-
-  .scrollablestaticdiv { max-height: 50vh; overflow-y: auto; }
-}
-
-@media (min-width: 600.01px) and (max-width: 1200px) {
-  body { overflow: hidden; }
-  body.lightmode { overflow: hidden; }  
-
-  .bodyparent {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 1.5rem;
-    margin: 2rem;
-    margin-left: 2%
-  }
-
-  .aboutme { grid-area: 1 / 1 / 2 / 2; font-size: 125%; }
-  .calendar { grid-area: 2 / 1 / 3 / 2; }
-  .qualifications { grid-area: 1 / 2 / 3 / 3; max-height: 65vh; } 
-
-  .headerparent {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
-    gap: 0.1rem;
-    align-items: start;
-    width: 100%;
-    margin-left: 1.3rem;
-  }
-
-  .headerdiv1 { grid-column: 1; grid-row: 1 / span 2; }
-  .headerdiv2 { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
-  .headerdiv3 { grid-column: 3; grid-row: 1; }
-  .headerdiv4 { grid-column: 3; grid-row: 2; } 
-
-  .scrollablestaticdiv { max-height: 55vh; overflow-y: auto; }
-}
-
-@media (max-width: 600px) {
-
-  .profilepicture{
-    height: 6rem;
-	  width: 6rem;
-  }
-  nav {
-    height: 6rem;
-  }
-  p {
-    font-size: 1.2rem;
-  }
-  .headerparent {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: repeat(3, auto);
-    gap: 0.5rem;
-    align-items: start;
-    width: 100%;
-    margin-left: 1.3rem;
-  }
-
-  .headerdiv1 { grid-area: 1 / 1 / 4 / 2; }
-  .headerdiv2 { grid-area: 1 / 2 / 2 / 3; }
-  .headerdiv3 { grid-area: 2 / 2 / 3 / 3; }
-  .headerdiv4 { grid-area: 3 / 2 / 4 / 3; } 
-
-  .bodyparent {
-    display: block;
-    margin: 2rem;
-  }
-  .aboutme, .calendar, .qualifications {
-    margin-bottom: 1rem;
-  }
-
-  .button {
-    width: 35vw;
-  }
-
-  .buttons {
-    gap: 3rem;
-  }
-}
 
 .calendar-table {
   table-layout: fixed;
@@ -368,4 +252,131 @@ body.lightmode .unavailable {
   width: 100%;
   text-align: center;
   margin: .1rem;
+}
+
+@media (min-width: 1200.01px) {
+  body { overflow: hidden; }
+  body.lightmode { overflow: hidden; }
+
+  .headerparent {
+    display: flex;
+    align-items: center;
+    width: 100%
+  }
+
+  .headerdiv1 {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-left: 5%;
+  }
+  .headerdiv2,
+  .headerdiv3,
+  .headerdiv4 {
+    margin-left: 3rem;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .bodyparent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 2rem;
+    margin: 3rem;
+    margin-left: 5%;
+  }
+
+  .aboutme { grid-area: 1 / 1 / 5 / 2; font-size: 125%; }
+  .calendar { grid-area: 5 / 1 / 11 / 2; position: relative; z-index: -1; }
+  .qualifications { grid-area: 1 / 2 / 11 / 4; max-height: 65vh; }
+
+  .scrollablestaticdiv { max-height: 50vh; overflow-y: auto; }
+}
+
+@media (min-width: 600.01px) and (max-width: 1200px) {
+  body { overflow: hidden; }
+  body.lightmode { overflow: hidden; }  
+
+  .bodyparent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+    margin: 2rem;
+    margin-left: 2%
+  }
+
+  .aboutme { grid-area: 1 / 1 / 2 / 2; font-size: 125%; }
+  .calendar { grid-area: 2 / 1 / 3 / 2; position: relative; z-index: -1; }
+  .qualifications { grid-area: 1 / 2 / 3 / 3; max-height: 65vh; } 
+
+  .headerparent {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 0.1rem;
+    align-items: start;
+    width: 100%;
+    margin-left: 1.3rem;
+  }
+
+  .headerdiv1 { grid-column: 1; grid-row: 1 / span 2; }
+  .headerdiv2 { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  .headerdiv3 { grid-column: 3; grid-row: 1; }
+  .headerdiv4 { grid-column: 3; grid-row: 2; } 
+
+  .scrollablestaticdiv { max-height: 55vh; overflow-y: auto; }
+}
+
+@media (max-width: 600px) {
+
+  .profilepicture{
+    height: 6rem;
+	  width: 6rem;
+  }
+  nav {
+    height: 6rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .headerparent {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 0.5rem;
+    align-items: start;
+    width: 100%;
+    margin-left: 1.3rem;
+  }
+
+  .headerdiv1 { grid-area: 1 / 1 / 4 / 2; }
+  .headerdiv2 { grid-area: 1 / 2 / 2 / 3; }
+  .headerdiv3 { grid-area: 2 / 2 / 3 / 3; }
+  .headerdiv4 { grid-area: 3 / 2 / 4 / 3; } 
+
+  .bodyparent {
+    display: block;
+    margin: 2rem;
+  }
+  .aboutme, .calendar, .qualifications {
+    margin-bottom: 1rem;
+    position: relative; z-index: -1; 
+    font-size: .8rem;
+  }
+
+  .button {
+    width: 35vw;
+  }
+
+  .buttons {
+    gap: 3rem;
+  }
+
+  #theme-switch {
+    display: none;
+  }
 }
